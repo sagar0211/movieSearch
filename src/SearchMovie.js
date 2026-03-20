@@ -8,21 +8,21 @@ export default function SearchMovie(){
     const [movies, setMovies] = useState([]);
     const [apiCalled,setApiCall] = useState(false);
 
-    async function searchMovie(e){
+    async function searchMovie(e) {
         e.preventDefault();
-        const url = `https://api.themoviedb.org/3/search/movie?api_key=c33832369178e4ae690545fea0aee656&language=en-US&query=${query}&page=1&include_adult=false`;
+
         try {
-            if(validateForm(query)) {
-                const res = await fetch(url);
-                const data  = await res.json();
+            if (validateForm(query)) {
+                const res = await fetch(`/api/movies?q=${query}`);
+                const data = await res.json();
+
                 setMovies(data.results);
                 setApiCall(true);
             }
-        }
-        catch(err){
+        } catch (err) {
             console.error(err);
         }
-    }   
+    }  
 
     function showList() {
         if(movies.length) {
