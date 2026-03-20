@@ -85,7 +85,11 @@ small {
 }
 .card--image {
   margin: 0 auto;
-  display: block,
+  display: block;
+  width: 185px;
+  height: 278px;
+  object-fit: cover;
+  border-radius: 8px;
   
 }
 
@@ -171,7 +175,11 @@ small {
   
   .card--image {
     margin: 0 auto;
-    display: block,
+    display: block;
+    width: 185px;
+    height: 278px;
+    object-fit: cover;  
+    border-radius: 8px;
   }
   p {
     font-size: 20px;
